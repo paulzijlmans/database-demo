@@ -3,14 +3,14 @@ package nl.paulzijlmans.database.databasedemo.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import java.util.Date;
 
 @Entity
+@NamedQuery(name = "find_all_persons", query = "select p from Person p")
 public class Person {
 
-  @Id
-  @GeneratedValue
-  private int id;
+  @Id @GeneratedValue private int id;
 
   private String name;
   private String location;
@@ -65,11 +65,17 @@ public class Person {
 
   @Override
   public String toString() {
-    return "\nPerson{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", location='" + location + '\'' +
-            ", birthDate=" + birthDate +
-            '}';
+    return "\nPerson{"
+        + "id="
+        + id
+        + ", name='"
+        + name
+        + '\''
+        + ", location='"
+        + location
+        + '\''
+        + ", birthDate="
+        + birthDate
+        + '}';
   }
 }

@@ -24,6 +24,7 @@ public class JpaDemoApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) {
+    logger.info("All users -> {}", repository.findAll());
     logger.info("User id 10001 -> {}", repository.findById(10001));
     logger.info("Inserting -> {}", repository.insert(new Person("Tara", "Berlin", new Date())));
     logger.info(
@@ -32,9 +33,6 @@ public class JpaDemoApplication implements CommandLineRunner {
 
     logger.info("Deleting 10002");
     repository.deleteById(10002);
-
-    //    logger.info("All users -> {}", repository.findAll());
-    //    logger.info("User(s) name Pieter -> {}", repository.findByName("Pieter"));
-    //    logger.info("All users -> {}", repository.findAll());
+    logger.info("All users -> {}", repository.findAll());
   }
 }
