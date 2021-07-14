@@ -1,4 +1,4 @@
-create table person
+CREATE TABLE person
 (
     id integer not null,
     name varchar(255) not null,
